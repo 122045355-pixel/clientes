@@ -115,13 +115,6 @@
                             placeholder="Cantidad"
                         >
 
-                        <input
-                            type="number"
-                            id="precio"
-                            class="form-control mb-3"
-                            placeholder="Precio"
-                        >
-
                         <button
                             class="btn btn-success w-100"
                             onclick="crearPedido()"
@@ -136,7 +129,7 @@
             </div>
 
 
-            --pedidos realizados--
+            
             <div class="col-md-4">
 
                 <div class="card shadow">
@@ -178,58 +171,6 @@
 
     <!-- JS -->
     <script src="menu.js"></script>
-
-    <script>
-
-        function crearPedido(){
-
-            let cliente =
-            document.getElementById("cliente").value;
-
-            let producto =
-            document.getElementById("producto").value;
-
-            let cantidad =
-            Number(document.getElementById("cantidad").value);
-
-            let precio =
-            Number(document.getElementById("precio").value);
-
-
-            // LLAMAR FUNCION DEL JS
-            agregarPedido(cliente, producto, cantidad, precio);
-
-
-            // CREAR FILA
-            let tabla =
-            document.getElementById("tablaPedidos");
-
-            let fila =
-            document.createElement("tr");
-
-
-            fila.innerHTML = `
-                <td>${cliente}</td>
-                <td>${producto}</td>
-                <td>$${cantidad * precio}</td>
-            `;
-
-
-            tabla.appendChild(fila);
-
-
-            // LIMPIAR INPUTS
-            document.getElementById("cliente").value = "";
-
-            document.getElementById("producto").value = "";
-
-            document.getElementById("cantidad").value = "";
-
-            document.getElementById("precio").value = "";
-
-        }
-
-    </script>
 
 </body>
 </html>
